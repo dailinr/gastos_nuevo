@@ -67,6 +67,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* *{
+  border: 1px solid gray;
+} */
+
 :root {
   font-family: "Poppins", sans-serif;
   --radius: 0.625rem;

@@ -1,7 +1,6 @@
 import { Progress } from "@/components/ui/progress"
 import { Card } from "./Card"
-import { gastos, ingresos } from "@/data/datos"
-import BarGraphic from "./BarGraphic";
+
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const categories = [
@@ -32,16 +31,16 @@ const categories = [
 export const BoardLeft = () => {
 
   return (
-    <div className="col-span-2  md:col-span-1  h-full overflow-y-hidden">
+    <div className="col-span-2 grid grid-rows-[40px_minmax(0,_1fr)] md:col-span-1 overflow-auto  h-full">
       
       <Tabs defaultValue="account" className="w-full pb-[12px] ">
         <TabsList className="mx-auto bg-[#DFDFDF] ">
           <TabsTrigger value="account">Semana</TabsTrigger>
           <TabsTrigger value="password">Mes</TabsTrigger>
         </TabsList>
-      </Tabs>
+      </Tabs> 
 
-      <div className="grid grid-rows-[110px_160px_1fr] grid-cols-3 gap-4 h-full">
+      <div className="grid grid-rows-[110px_160px_minmax(0,_1fr)] grid-cols-3 gap-4 h-full">
 
         <Card amount={5800} label="Gastos" svg="business-finance-corporate-22-svgrepo-com" color="bg-[#C7E9F9]" type="card" />
         <Card amount={9500} label="Ingresos" svg="business-finance-corporate-26-svgrepo-com" color="bg-[#FFD9D9]" type="card" />
@@ -49,7 +48,7 @@ export const BoardLeft = () => {
 
         <div className="col-span-3 grid grid-cols-2 gap-4 h-full">
 
-          <section className="bg-white rounded-xl shadow px-4 py-2 h-full relative overflow-y-hidden ">
+          <section className="bg-white rounded-xl shadow px-4 py-2 h-full relative flex flex-col overflow-auto">
             <div className="">
 
             <i className='bx bx-right-arrow-alt text-xl absolute right-4 cursor-pointer text-[#9B9B9B] border border-[#9B9B9B] p-1 rounded-full'></i>
@@ -75,7 +74,7 @@ export const BoardLeft = () => {
 
           </section>
 
-          <section className="bg-white rounded-xl shadow px-4 py-2 h-full relative overflow-hidden">
+          <section className="bg-white rounded-xl shadow px-4 py-2 h-full relative flex flex-col overflow-auto">
 
             <i className='bx bx-right-arrow-alt text-xl absolute right-4 cursor-pointer text-[#9B9B9B] border border-[#9B9B9B] p-1 rounded-full'></i>
             <h1 className="text-md font-semibold pt-1">Metas de Ahorro</h1>
@@ -87,9 +86,21 @@ export const BoardLeft = () => {
             </section>
         </div>
 
-        <div className="bg-white col-span-3 rounded-xl shadow p-4 h-full flex flex-col">
-          <BarGraphic ingresos={ingresos} gastos={gastos} />
+        <div className="bg-white col-span-3 rounded-xl shadow px-4 py-2 h-full relative flex flex-col overflow-auto">
+          <div>
+            <i className='bx bx-right-arrow-alt text-xl absolute right-4 cursor-pointer text-[#9B9B9B] border border-[#9B9B9B] p-1 rounded-full'></i>
+            <h1 className="text-md font-semibold pt-1">Gastos por Categoria</h1>
+            <p className="text-gray-500 mb-1.5 font-semibold text-[12px]">último mes</p>
+
+            <div className="h-max gap-x-2 flex">
+              <Card amount={5800} label="Gastos" svg="business-finance-corporate-22-svgrepo-com" color="bg-red-500" type="category" />
+              <Card amount={9500} label="Ingresos" svg="business-finance-corporate-26-svgrepo-com" color="bg-purple-500" type="category" />
+              <Card amount={18000} label="Acumulado" svg="finance-svgrepo-com" color="bg-blue-500"  type="category" />
+              <Card amount={18000} label="Acumulado" svg="finance-svgrepo-com" color="bg-blue-500"  type="category" />
+            </div>
+          </div>
         </div>
+        
       </div>
     </div>
   )
