@@ -1,15 +1,28 @@
 import { SidebarProvider} from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/AppSidebar"
-import { Dashboard } from "./components/Dashboard"
-
+import { Header } from "./components/Header"
+import { BoardLeft } from "./components/BoardLeft"
+import { BoardRight } from "./components/BoardRight"
 
 function App() {
 
   return (
+
     <SidebarProvider>
+    
       <AppSidebar/>
-      
-      <Dashboard />
+
+      <section className="flex flex-col w-full h-screen py-5 px-5 md:pl-1 md:pr-5 gap-4">
+
+        <Header />
+        
+        <main className="flex-1 grid grid-cols-1 md:grid-cols-[57%_1fr] gap-4 md:overflow-hidden">
+          <BoardLeft />
+          <BoardRight />
+        </main>
+
+      </section>
+
     </SidebarProvider>
   )
 }

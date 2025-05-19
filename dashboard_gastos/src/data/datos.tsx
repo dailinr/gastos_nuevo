@@ -1,10 +1,6 @@
-export type recurso = {
-    id: number
-    valor : number
-    diaSemana: string
-}
+import type { Recurso } from "@/types";
 
-export const ingresos : recurso[] = [
+export const ingresos : Recurso[] = [
     {
         id: 1,
         valor: 3545,
@@ -22,7 +18,7 @@ export const ingresos : recurso[] = [
     },
 ];
 
-export const gastos : recurso[] = [
+export const gastos : Recurso[] = [
     {
         id: 1,
         valor: 1500,

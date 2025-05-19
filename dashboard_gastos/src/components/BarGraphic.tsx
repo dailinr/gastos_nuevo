@@ -1,10 +1,10 @@
 import EchartGraph from './EchartGraph';
 // import "./../css/dashboard.css";
-import type { recurso } from '@/data/datos';
+import type { Recurso } from "@/types";
 
 type graficaProps = {
-  ingresos: recurso[]
-  gastos: recurso[]
+  ingresos: Recurso[]
+  gastos: Recurso[]
 }
 
 const BarGraphic = ({ ingresos, gastos } : graficaProps ) => {
@@ -142,7 +142,7 @@ const option = {
         Diagrama semana
       </h1>
       
-      <div className="flex-1">
+      <div className="flex-1  ">
 
         <EchartGraph options={option} />
       </div>

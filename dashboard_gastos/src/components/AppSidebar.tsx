@@ -39,7 +39,7 @@ const items = [
 
 export function AppSidebar() {
   return (
-    <Sidebar collapsible="icon" className="h-full p-5 ">
+    <Sidebar collapsible="icon" className="h-full p-4 ">
       
       <SidebarContent className="rounded-lg shadow p-2">
         <SidebarTrigger />
