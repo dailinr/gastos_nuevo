@@ -26,16 +26,16 @@ export const BoardLeft = () => {
               <h1 className="text-md font-semibold pt-1">Resumen de Gastos</h1>
               <p className="text-gray-500 mb-2 font-semibold text-[12px]">último mes</p>
 
-              <div className="flex gap-x-3 px-8">
-                <div className="w-20 h-20">
+              <div className="flex gap-x-3 px-2">
+                <div className="w-30 h-30">
                   <img src="/grafico.jpg" alt="" />
                 </div>
 
                 <div className="flex flex-col mx-auto mr-0">
-                  {cate.map(cat => (
+                  {categories.map(cat => cat.amount > 0 && (
                     <div key={cat.id} className="flex items-center">
-                      <i className={`bx bxs-circle ${cat.color} text-[8px] mr-1`}/>
-                      <span className="text-[12px] align-center">{cat.nombre}</span> 
+                      <i className={`bx bxs-circle ${cat.colorText} text-[8px] mr-1`}/>
+                      <span className="text-[12px] align-center">{cat.name}</span> 
                     </div>
                   ))}
                 </div>
@@ -47,18 +47,16 @@ export const BoardLeft = () => {
           {/* Progreso de ahorros */}
           <section className="bg-white rounded-xl shadow px-4 py-2 h-full relative flex flex-col overflow-auto">
             
-            <div className=" flex-1">
+            <div className=" flex-1k">
               <i className='bx bx-right-arrow-alt text-xl absolute right-4 cursor-pointer text-[#9B9B9B] border border-[#9B9B9B] p-1 rounded-full'></i>
               <h1 className="text-md font-semibold pt-1">Metas de Ahorro</h1>
               <p className="text-gray-500 font-semibold mb-3 text-md">$15,900</p>
-
-              <div className="flex-grow ">
                 
                 <Progress value={90} />
                 <div className="w-full h-[45px] rounded-lg bg-[#F6F6FA] text-xl flex items-center justify-center mt-4">
                   $25,000
                 </div>
-              </div>
+              
             </div>
 
           </section>
@@ -68,10 +66,10 @@ export const BoardLeft = () => {
           
           <i className='bx bx-right-arrow-alt text-xl absolute right-4 cursor-pointer text-[#9B9B9B] border border-[#9B9B9B] p-1 rounded-full'></i>
           <h1 className="text-md font-semibold pt-1">Gastos por Categoria</h1>
-          <p className="text-gray-500 mb-1.5 font-semibold text-[12px]">último mes</p>
+          <p className="text-gray-500 mb-2 font-semibold text-[12px]">último mes</p>
           
           <div className="flex-1 overflow-auto ">
-            <div className="flex flex-wrap gap-y-4 h-full items-center justify-between border ">
+            <div className="flex flex-wrap gap-y-4 h-full items-center justify-between ">
 
               {categories.map(category => (
                 <Card 

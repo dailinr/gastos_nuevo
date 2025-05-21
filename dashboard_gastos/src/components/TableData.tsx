@@ -7,37 +7,36 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import type { Product } from "@/types"
-import { Button } from "@/components/ui/button"
+import { ingresos } from "@/data/datos"
+import { Edit, Trash } from "@mynaui/icons-react"
 
-  
-type props = {
-    products: Product[]
-}
 
-export const TableData = ({ products } : props) => {
+export const TableData = () => {
   return (
     <Table>
         
-        <TableCaption>Productos de la factura</TableCaption>
-        <TableHeader className="bg-gray-200">
-            <TableRow>
-                <TableHead >Producto</TableHead>
-                <TableHead>Cantidad</TableHead>
-                <TableHead>Precio</TableHead>
+        <TableCaption></TableCaption>
+        <TableHeader >
+            <TableRow >
+                <TableHead className="pl-5" >Fecha</TableHead>
+                <TableHead>Etiqueta</TableHead>
+                <TableHead>Descripcion</TableHead>
+                <TableHead>Valor</TableHead>
                 <TableHead className="text-right pr-8">Action</TableHead>
             </TableRow>
         </TableHeader>
         <TableBody>
-            {products.map(( { id, name, description, price }) => 
+            {ingresos.map(( { id, diaSemana, valor }) => 
                 <TableRow key={id}>
-                    <TableCell className="font-medium">{name}</TableCell>
-                    <TableCell>{description}</TableCell>
-                    <TableCell>${price}</TableCell>
-                    <TableCell className="text-right">
-                        <Button variant="link" className="cursor-pointer text-red-500">
-                            Eliminar
-                        </Button>
+                    <TableCell className="font-semibold pl-5">30-05-2025</TableCell>
+                    <TableCell>Transporte</TableCell>
+                    <TableCell>de ida a la universidad</TableCell>
+                    <TableCell>${valor}</TableCell>
+                    <TableCell className="flex justify-end pr-8 gap-2">
+                        
+                        <Trash className="size-5.5  cursor-pointer text-red-500" />
+                        <Edit className="size-5  cursor-pointer text-blue-800" />
+                        
                     </TableCell>
                 </TableRow>
             )}

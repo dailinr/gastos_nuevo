@@ -10,4 +10,13 @@ export type Category = {
     icon: string
     amount: number
     color: string
+    colorText: string
+}
+
+export interface GastoReciente {
+  id: number
+  svg: string
+  nombre: string
+  fecha: string
+  valor: number
 }

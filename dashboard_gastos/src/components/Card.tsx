@@ -1,3 +1,4 @@
+import { Building } from "lucide-react";
 
 type cardProps = {
   amount: number;
@@ -9,7 +10,7 @@ type cardProps = {
 
 export const Card = ({ amount, label, icon, color, type }: cardProps) => {
   const classCard = `bg-white rounded-xl shadow p-3 md:p-5 flex md:flex-row flex-col items-center justify-between overflow-hidden h-auto md:h-[110px]}`;
-  const classCategory = 'flex-none w-1/5 flex flex-col items-center overflow-hidden  ';
+  const classCategory = 'flex-none w-1/6 flex flex-col items-center overflow-hidden  ';
 
   const contIcon = `${color} w-10 h-10 rounded-full flex items-center justify-center mb-1`;
 
@@ -38,6 +39,7 @@ export const Card = ({ amount, label, icon, color, type }: cardProps) => {
         <div className={contIcon}>
           <i className={`${icon}  ${iconClass}`}></i>
         </div>
+        
       )}
 
       <div className={`${type === 'card' ? "md:text-left " : "" } text-center flex-grow`}>

@@ -6,77 +6,96 @@ export const categories : Category[] = [
         name: "Mercado",
         icon: "bx bx-cart",
         amount: 5605,
-        color: 'bg-[#598BFF]'
+        color: 'bg-[#598BFF]',
+        colorText: "text-[#598BFF]"
     },
     {
         id: 2,
         name: "Transporte",
         icon: "bx bx-bus",
-        amount: 5605,
+        amount: 0,
         color: "bg-[#F2C744]",
+        colorText: "text-[#F2C744]"
     },
     {
         id: 3,
         name: "Estudios",
         icon: "bx bx-book",
-        amount: 5605,
+        amount: 0,
         color: "bg-[#737BF0]",
+        colorText: "text-[#737BF0]"
     },
     {
         id: 4,
         name: "Renta",
         icon: "bx bx-home",
         amount: 5605,
-        color: 'bg-[#FF59A8]'
+        color: 'bg-[#FF59A8]',
+        colorText: "text-[#FF59A8]"
     },
     {
         id: 5,
         name: "Compras",
         icon: "bx bx-shopping-bag",
-        amount: 5605,
-        color: 'bg-[#FF99D6]'
+        amount: 0,
+        color: 'bg-[#FF99D6]',
+        colorText: "text-[#FF99D6]"
     },
     {
         id: 6,
         name: "Salidas",
         icon: "bx bx-drink",
         amount: 5605,
-         color: 'bg-[#FFA54B]'
+         color: 'bg-[#FFA54B]',
+         colorText: "text-[#FFA54B]"
     },
     {
         id: 7,
         name: "Salud",
         icon: "bx bx-first-aid",
         amount: 5605,
-        color: 'bg-[#7A6860]'
+        color: 'bg-[#7A6860]',
+        colorText: "text-[#7A6860]"
     },
     {
         id: 8,
         name: "Servicios",
         icon: "bx bx-bulb",
-        amount: 5605,
-        color: 'bg-[#F66868]'
+        amount: 0,
+        color: 'bg-[#F66868]',
+        colorText: "text-[#F66868]"
     },
     {
         id: 9,
         name: "Subscripciones",
         icon: "bx bxl-spotify",
         amount: 5605,
-        color: 'bg-[#7AD68C]'
+        color: 'bg-[#7AD68C]',
+        colorText: "text-[#7AD68C]"
     },
     {
         id: 10,
         name: "Viajes",
         icon: "bx bxs-plane-alt",
-        amount: 5605,
-        color: 'bg-[#F4735C]'
+        amount: 0,
+        color: 'bg-[#F4735C]',
+        colorText: "text-[#F4735C]"
+    },
+    {
+        id: 11,
+        name: "Mascota",
+        icon: "bx bxs-dog",
+        amount: 0,
+        color: 'bg-yellow-200',
+        colorText: "text-yellow-200"
     },
     {
         id: 11,
         name: "Otros",
         icon: "bx bx-plus-circle",
         amount: 5605,
-        color: 'bg-[#B2967D]'
+        color: 'bg-[#B2967D]',
+        colorText: "text-[#B2967D]"
     },
 ]
 
@@ -86,21 +105,24 @@ export const cards : Category[] = [
         name: "Ingresos",
         icon: "business-finance-corporate-22-svgrepo-com",
         amount: 9620,
-        color: "bg-[#C7E9F9]"
+        color: "bg-[#C7E9F9]",
+        colorText: "text-[#C7E9F9]"
     },
     {
         id: 2,
         name: "Gastos",
         icon: "business-finance-corporate-26-svgrepo-com",
         amount: 7200,
-        color: "bg-[#FFD9D9]"
+        color: "bg-[#FFD9D9]",
+        colorText: "text-[#FFD9D9]"
     },
     {
         id: 3,
         name: "Acumulado",
         icon: "finance-svgrepo-com",
         amount: 4520,
-        color: "bg-[#CFF3AF]"
+        color: "bg-[#CFF3AF]",
+        colorText: "text-[#CFF3AF]"
     },
 ]
 
