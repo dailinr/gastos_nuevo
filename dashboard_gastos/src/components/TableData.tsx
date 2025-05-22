@@ -8,7 +8,7 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { ingresos } from "@/data/datos"
-import { Edit, Trash } from "@mynaui/icons-react"
+// import { Edit, Trash } from "@mynaui/icons-react"
 
 
 export const TableData = () => {
@@ -34,8 +34,8 @@ export const TableData = () => {
                     <TableCell>${valor}</TableCell>
                     <TableCell className="flex justify-end pr-8 gap-2">
                         
-                        <Trash className="size-5.5  cursor-pointer text-red-500" />
-                        <Edit className="size-5  cursor-pointer text-blue-800" />
+                        {/* <Trash className="size-5.5  cursor-pointer text-red-500" />
+                        <Edit className="size-5  cursor-pointer text-blue-800" /> */}
                         
                     </TableCell>
                 </TableRow>

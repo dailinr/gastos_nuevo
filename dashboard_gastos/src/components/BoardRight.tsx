@@ -1,6 +1,6 @@
 import BarGraphic from "./BarGraphic"
 import { gastoRecientes, gastos, ingresos } from "@/data/datos"
-
+import { Component as BarChart } from "../components/BarChart"
 
 export const BoardRight = () => {
 
@@ -9,8 +9,9 @@ export const BoardRight = () => {
     <div className="h-full overflow-auto">
       <div className="grid grid-rows-2 h-full gap-4  ">
 
-        <section className="w-full h-full shadow bg-white rounded-xl px-5 py-2 flex flex-col overflow-auto">
-          <BarGraphic ingresos={ingresos} gastos={gastos} />
+        <section className="w-full h-full shadow bg-white rounded-xl flex flex-col justify-center">
+          
+          <BarChart />
         </section>
 
         <section className="w-full h-full shadow flex flex-col bg-white rounded-xl px-2 py-2 relative ">

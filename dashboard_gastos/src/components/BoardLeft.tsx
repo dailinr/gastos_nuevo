@@ -1,6 +1,7 @@
 import { Progress } from "@/components/ui/progress"
 import { Card } from "./Card"
-import { cards, cate, categories } from "@/data/categories"
+import { cards, categories } from "@/data/categories"
+import { DonutChart } from "./DonaChart"
 
 export const BoardLeft = () => {
 
@@ -18,17 +19,18 @@ export const BoardLeft = () => {
         ))}
 
         <div className="col-span-3 grid grid-cols-2 gap-4 h-full">
-          {/* Grafica resumen de gastos */}
+           {/* Grafica resumen de gastos  */}
           <section className="bg-white rounded-xl shadow px-4 py-2 h-full relative flex flex-col overflow-auto">
-            <div>
+            
 
               <i className='bx bx-right-arrow-alt text-xl absolute right-4 cursor-pointer text-[#9B9B9B] border border-[#9B9B9B] p-1 rounded-full'></i>
               <h1 className="text-md font-semibold pt-1">Resumen de Gastos</h1>
               <p className="text-gray-500 mb-2 font-semibold text-[12px]">último mes</p>
 
-              <div className="flex gap-x-3 px-2">
-                <div className="w-30 h-30">
-                  <img src="/grafico.jpg" alt="" />
+              <div className="flex gap-x-3 ">
+                <div className="w-full">
+                   {/* <img src="/grafico.jpg" alt="" />   */}
+                  <DonutChart />
                 </div>
 
                 <div className="flex flex-col mx-auto mr-0">
@@ -39,9 +41,8 @@ export const BoardLeft = () => {
                     </div>
                   ))}
                 </div>
-              </div>
-
-            </div>
+              </div> 
+            
           </section>
 
           {/* Progreso de ahorros */}
