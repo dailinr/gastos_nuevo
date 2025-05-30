@@ -92,7 +92,7 @@
 :root {
   font-family: "Poppins", sans-serif;
   --radius: 0.625rem;
-  --background: #F6F6FA;
+  --background: #f1f5f9;
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);

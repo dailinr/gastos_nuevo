@@ -15,6 +15,7 @@ export const BoardLeft = () => {
             key={card.id} amount={card.amount} label={card.name}
             icon={card.icon}
             color={card.color} type="card"
+            colorText=""
           />
         ))}
 
@@ -78,6 +79,7 @@ export const BoardLeft = () => {
                   amount={category.amount} label={category.name}
                   icon={category.icon}
                   color={category.color} type="category" 
+                  colorText={category.colorText}
                 />
               ))}
 

@@ -1,7 +1,6 @@
-import { Header } from "./Header"
 import { TableData } from "./TableData"
 import { DatePicker } from './DatePicker'
-import { Button } from "./ui/button"
+// import { Button } from "./ui/button"
 import {
   Pagination,
   PaginationContent,
@@ -11,21 +10,23 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-import { Modal as ModalForm } from "../components/Modal"
-
+import { Modal as ModalForm } from "./Modal"
+import { useLocation } from "react-router-dom"
 
 export const TableContainer = () => {
+    const {pathname} = useLocation();
+
   return (
     <div className="flex flex-col w-full">
 
         <section className="mt-5 mb-5 md:flex space-y-3 md:space-y-0 justify-between  items-center">
             <div className="text-2xl font-semibold">
-                Gastos
+                {pathname === '/gastos'? ( 'Gastos' ):( 'Ingresos' )}
             </div>
-                <div className="flex gap-5 items-center ">
+            <div className="flex gap-5 items-center ">
                 <DatePicker width="w-[280px]" bg="hover:bg-white"/>
 
-                <ModalForm />
+                <ModalForm pathname={pathname} />
             </div>
         </section>
         

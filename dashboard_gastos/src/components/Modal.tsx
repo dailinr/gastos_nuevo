@@ -23,11 +23,13 @@ import {
 import { categories } from "@/data/categories"
 
 
-export function Modal() {
+export function Modal({ pathname }: {pathname : string}) {
   return (
     <Dialog >
       <DialogTrigger asChild>
-        <Button className="cursor-pointer">Agregar Gasto</Button>
+        <Button className="cursor-pointer">
+          Agregar {pathname === '/gastos' ? 'Gasto' : 'Ingreso'}
+        </Button>
       </DialogTrigger>
 
       <DialogContent className="sm:max-w-[425px] bg-white">

@@ -1,5 +1,4 @@
-import { Calendar, Home, Inbox, Settings } from "lucide-react"
-
+import { Calendar, LayoutDashboard, Inbox, Settings, ChartColumnBig, ChartSpline, BanknoteArrowDown } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -13,28 +12,30 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 
-// Menu items.
+import { NavLink } from "react-router-dom"
+
+// Menu items con sus rutas reales
 const items = [
   {
     title: "Dashboard",
-    url: "#",
-    icon: Home,
+    url: "/",
+    icon: LayoutDashboard,
   },
   {
     title: "Ingresos",
-    url: "#",
-    icon: Inbox,
+    url: "/ingresos",
+    icon: ChartColumnBig,
   },
   {
     title: "Gastos",
-    url: "#",
-    icon: Calendar,
+    url: "/gastos",
+    icon: BanknoteArrowDown,
   },
-  {
-    title: "Configuracion",
-    url: "#",
-    icon: Settings,
-  },
+  // {
+  //   title: "Configuración",
+  //   url: "/configuracion",
+  //   icon: Settings,
+  // },
 ]
 
 export function AppSidebar() {
@@ -44,21 +45,29 @@ export function AppSidebar() {
       <SidebarContent className="rounded-lg shadow p-2">
         <SidebarTrigger />
         <SidebarGroup className="group-data-[collapsible=icon]:hidden ">
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupLabel>Control gastos</SidebarGroupLabel>
           <SidebarGroupContent>
+
             <SidebarMenu>
               {items.map((item) => (
-                <SidebarMenuItem key={item.title} >
-                  <SidebarMenuButton asChild >
-                    <a href={item.url} className="py-5">
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                   <SidebarMenuAction className="peer-data-[active=true]/menu-button:opacity-100" />
-                </SidebarMenuItem>
+                <NavLink key={item.title} to={item.url} end>
+                  {({ isActive }) => (
+                    <SidebarMenuItem>
+                      <SidebarMenuButton
+                        asChild isActive={isActive}
+                      >
+                        <a className="py-5">
+                          <item.icon className="w-5 h-5" />
+                          <span>{item.title}</span>
+                        </a>
+                      </SidebarMenuButton>
+                      <SidebarMenuAction />
+                    </SidebarMenuItem>
+                  )}
+                </NavLink>
               ))}
             </SidebarMenu>
+
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>

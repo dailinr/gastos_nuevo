@@ -6,32 +6,32 @@ export const categories : Category[] = [
         name: "Mercado",
         icon: "bx bx-cart",
         amount: 5605,
-        color: 'bg-[#598BFF]',
-        colorText: "text-[#598BFF]"
+        color: 'bg-[#fbcfe8]',
+        colorText: "text-[#be185d]"
     },
     {
         id: 2,
         name: "Transporte",
         icon: "bx bx-bus",
         amount: 0,
-        color: "bg-[#F2C744]",
-        colorText: "text-[#F2C744]"
+        color: "bg-[#c7d2fe]",
+        colorText: "text-[#312e81]"
     },
     {
         id: 3,
         name: "Estudios",
         icon: "bx bx-book",
         amount: 0,
-        color: "bg-[#737BF0]",
-        colorText: "text-[#737BF0]"
+        color: "bg-[#ddd6fe]",
+        colorText: "text-[#5b21b6]"
     },
     {
         id: 4,
         name: "Renta",
         icon: "bx bx-home",
         amount: 5605,
-        color: 'bg-[#FF59A8]',
-        colorText: "text-[#FF59A8]"
+        color: 'bg-[#bbf7d0]',
+        colorText: "text-[#052e16"
     },
     {
         id: 5,

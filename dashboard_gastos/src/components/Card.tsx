@@ -1,4 +1,4 @@
-import { Building } from "lucide-react";
+// import { Building } from "lucide-react";
 
 type cardProps = {
   amount: number;
@@ -6,15 +6,16 @@ type cardProps = {
   icon: string
   color: string
   type: string
+  colorText: string
 };
 
-export const Card = ({ amount, label, icon, color, type }: cardProps) => {
+export const Card = ({ amount, label, icon, color, type, colorText }: cardProps) => {
   const classCard = `bg-white rounded-xl shadow p-3 md:p-5 flex md:flex-row flex-col items-center justify-between overflow-hidden h-auto md:h-[110px]}`;
   const classCategory = 'flex-none w-1/6 flex flex-col items-center overflow-hidden  ';
 
   const contIcon = `${color} w-10 h-10 rounded-full flex items-center justify-center mb-1`;
 
-  const iconClass = `text-[18px] md:text-[20px] text-gray-800 `;
+  const iconClass = `text-[18px] md:text-[20px] ${colorText}`;
 
   const contSVG = `${color} rounded-full p-2 mr-0 md:mr-4 mb-2 md:mb-0 flex-shrink-0`;
   const contSVGCategory = `${color} border border-black rounded-full p-1.5 mr-0  mb-1 flex-shrink-0`;
