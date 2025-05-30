@@ -1,5 +1,4 @@
-import BarGraphic from "./BarGraphic"
-import { gastoRecientes, gastos, ingresos } from "@/data/datos"
+import { gastoRecientes } from "@/data/datos"
 import { Component as BarChart } from "../components/BarChart"
 
 export const BoardRight = () => {

@@ -90,7 +90,7 @@ export const categories : Category[] = [
         colorText: "text-yellow-200"
     },
     {
-        id: 11,
+        id: 12,
         name: "Otros",
         icon: "bx bx-plus-circle",
         amount: 5605,
