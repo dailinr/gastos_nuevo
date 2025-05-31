@@ -1,6 +1,6 @@
 "use client"
 
-import { TrendingUp } from "lucide-react"
+// import { TrendingUp } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
 import {
@@ -16,43 +16,56 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import { useAppStore } from "@/Stores/useAppStore"
+import { formatDateGrap } from "@/Services/formatDate"
+import { Spinner } from "./Spinner"
 
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { day: "Lunes", ingreso: 186, gasto: 80 },
+  { day: "Martes", ingreso: 305, gasto: 200 },
+  { day: "Miercoles", ingreso: 237, gasto: 120 },
+  { day: "Jueves", ingreso: 73, gasto: 190 },
+  { day: "Friday", ingreso: 209, gasto: 130 },
+  { day: "Sabado", ingreso: 214, gasto: 140 },
+  { day: "Domingo", ingreso: 214, gasto: 140 },
 ]
 
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
+  ingreso: {
+    label: "Ingresos",
     // color: "#818cf8",
     color: "#a5b4fc"
   },
-  mobile: {
-    label: "Mobile",
+  gasto: {
+    label: "Gastos",
     color: "#4f46e5",
   },
 } satisfies ChartConfig
 
 export function Component() {
 
+  const { cuentaActual } = useAppStore()
+
+  if(!cuentaActual || !cuentaActual.cuenta){
+    return ( <Spinner />)
+  }
+
+  const fechaInicial = formatDateGrap(cuentaActual.cuenta?.fechaInicial?.toString() || "")
+  const fechaFinal = formatDateGrap(cuentaActual.cuenta?.fechaFinal?.toString() || "")
+
   return (
     // <div >
     <Card className=" h-full ">
       <CardHeader>
-        <CardTitle>Grafica resumen del año</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>Grafica resumen de la semana</CardTitle>
+        <CardDescription>{fechaInicial} - {fechaFinal}</CardDescription>
       </CardHeader>
       <CardContent className="w-full  overflow-auto">
         <ChartContainer config={chartConfig} className="h-full w-full">
           <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
             <XAxis
-              dataKey="month"
+              dataKey="day"
               tickLine={false}
               tickMargin={10}
               axisLine={false}
@@ -62,8 +75,8 @@ export function Component() {
               cursor={false}
               content={<ChartTooltipContent indicator="dashed" />}
             />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-            <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+            <Bar dataKey="ingreso" fill="var(--color-ingreso)" radius={4} />
+            <Bar dataKey="gasto" fill="var(--color-gasto)" radius={4} />
           </BarChart>
         </ChartContainer>
       </CardContent>

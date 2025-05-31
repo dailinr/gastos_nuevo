@@ -2,12 +2,18 @@ import { Outlet, useLocation } from "react-router-dom"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/AppSidebar"
 import { Header } from "@/components/Header";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
+import { useAppStore } from "@/Stores/useAppStore";
 
 export const Layout = () => {
 
   const {pathname} = useLocation();
   const isHome = useMemo(() => pathname === '/', [pathname]);
+  const { fetchSemana} = useAppStore()
+
+  useEffect(() => {
+    fetchSemana()
+  }, [])
 
   return (
     <SidebarProvider>

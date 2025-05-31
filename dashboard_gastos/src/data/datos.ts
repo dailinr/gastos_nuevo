@@ -36,33 +36,33 @@ export const gastos : Recurso[] = [
     },
 ]
 
-export const gastoRecientes : GastoReciente[] = [
-  {
-    id: 1,
-    svg: "business-finance-corporate-22-svgrepo-com",
-    nombre: "Empanadas",
-    fecha: "ayer",
-    valor: 5646
-  },
-  {
-    id: 2,
-    svg: "business-finance-corporate-22-svgrepo-com",
-    nombre: "Empanadas",
-    fecha: "ayer",
-    valor: 5646
-  },
-  {
-    id: 3,
-    svg: "business-finance-corporate-22-svgrepo-com",
-    nombre: "Empanadas",
-    fecha: "ayer",
-    valor: 5646
-  },
-  {
-    id: 4,
-    svg: "business-finance-corporate-22-svgrepo-com",
-    nombre: "Empanadas",
-    fecha: "ayer",
-    valor: 5646
-  },
-]
+// export const gastoRecientes : GastoReciente[] = [
+//   {
+//     id: 1,
+//     svg: "business-finance-corporate-22-svgrepo-com",
+//     nombre: "Empanadas",
+//     fecha: "ayer",
+//     valor: 5646
+//   },
+//   {
+//     id: 2,
+//     svg: "business-finance-corporate-22-svgrepo-com",
+//     nombre: "Empanadas",
+//     fecha: "ayer",
+//     valor: 5646
+//   },
+//   {
+//     id: 3,
+//     svg: "business-finance-corporate-22-svgrepo-com",
+//     nombre: "Empanadas",
+//     fecha: "ayer",
+//     valor: 5646
+//   },
+//   {
+//     id: 4,
+//     svg: "business-finance-corporate-22-svgrepo-com",
+//     nombre: "Empanadas",
+//     fecha: "ayer",
+//     valor: 5646
+//   },
+// ]

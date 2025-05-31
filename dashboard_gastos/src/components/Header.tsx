@@ -1,9 +1,11 @@
 import 'boxicons/css/boxicons.min.css';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { formatDate } from '@/Services/formatDate';
 // import { CogFour, Bell, Search } from "@mynaui/icons-react";
 
 export const Header  = ({ section }: {section : string}) => {
     const nombre = "Dailin";
+    const fechaActual = new Date()
 
   return (
     <div className="flex-shrink-0 ">
@@ -15,7 +17,9 @@ export const Header  = ({ section }: {section : string}) => {
                     <h1 className="text-black text-xl font-semibold">
                         Hola, {nombre}!
                     </h1>
-                    <p className='text-[#666666] text-[12px]'>27 de Marzo del 2025</p>
+                    <p className='text-[#666666] text-[12px]'>
+                        {formatDate(fechaActual.toString())}
+                    </p>
                 </div> 
 
                 <Tabs defaultValue="account" >
